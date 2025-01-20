@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<futbol>
+    <jornada num="1">
+        <partit num="1">
+            <dia>23-12-2023</dia>
+            <equip juga="local">
+                <nom>Slytherin</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Draco</jugador>
+                    <jugador>Draco</jugador>
+                </gols>                
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Gryffindor</nom>
+                <resultat>0</resultat>
+                <gols/>
+            </equip>
+        </partit>
+        
+        <partit num="2">
+            <dia>23-12-2023</dia>
+            <equip juga="local">
+                <nom>Ravenclaw</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                </gols>
+            </equip>
+            <equip juga="visitant">
+                <nom>Hufflepuff</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Diggory</jugador>
+                </gols>
+            </equip>
+        </partit>
+    </jornada>
+    
+    <jornada num="2">
+        
+        <partit num="1">
+            <dia>30-12-2023</dia>
+
+            <equip juga="local">
+                <nom>Ravenclaw</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                    <jugador>Page</jugador>
+                </gols>
+            </equip>
+
+            <equip juga="visitant">
+                <nom>Slytherin</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Black</jugador>
+                </gols>
+            </equip>
+        </partit>
+        
+        <partit num="2">
+            <dia>31-12-2023</dia>
+
+            <equip juga="local">
+                <nom>Hufflepuff</nom>
+                <resultat>0</resultat>
+                <gols/>
+            </equip>
+
+            <equip juga="visitant">
+                <nom>Gryffindor</nom>
+                <resultat>4</resultat>
+                <gols>
+                    <jugador>Potter</jugador>
+                    <jugador>Potter</jugador>
+                    <jugador>Wesley</jugador>
+                    <jugador>Potter</jugador>
+                </gols>
+            </equip>
+        </partit>
+        
+    </jornada>
+    
+    <jornada num="3">
+
+        <partit num="1">
+            <dia>07-01-2024</dia>
+            
+            <equip juga="local">
+                <nom>Slytherin</nom>
+                <resultat>0</resultat>
+                <gols/>                
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Hufflepuff</nom>
+                <resultat>0</resultat>
+                <gols/>                
+            </equip>            
+        </partit>
+        
+        <partit num="2">
+            <dia>07-01-2024</dia>
+            
+            <equip juga="local">
+                <nom>Ravenclaw</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                </gols>
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Gryffindor</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Potter</jugador>
+                    <jugador>Potter</jugador>
+                </gols>
+            </equip>            
+        </partit>
+        
+    </jornada>
+    
+    <jornada num="4">
+        
+        <partit num="1">
+            <dia>14-01-2024</dia>
+            
+            <equip juga="local">
+                <nom>Hufflepuff</nom>
+                <resultat>0</resultat>
+                <gols/>                
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Slytherin</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Montague</jugador>
+                </gols>
+            </equip>            
+        </partit>
+        
+        <partit num="2">
+            <dia>15-01-2024</dia>
+            
+            <equip juga="local">
+                <nom>Gryffindor</nom>
+                <resultat>5</resultat>
+                <gols>
+                    <jugador>Potter</jugador>
+                    <jugador>Wesley</jugador>
+                    <jugador>Wood</jugador>
+                    <jugador>Potter</jugador>
+                    <jugador>Thomas</jugador>
+                </gols>
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Ravenclaw</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                </gols>
+            </equip>            
+        </partit>
+        
+    </jornada>
+    
+    <jornada num="5">
+                
+        <partit num="1">
+            <dia>21-01-2024</dia>
+            
+            <equip juga="local">
+                <nom>Slytherin</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Crabbe</jugador>
+                    <jugador>Draco</jugador>
+                </gols>
+            </equip>
+            
+            <equip juga="visitant">
+                <nom>Ravenclaw</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                    <jugador>Stretton</jugador>
+                </gols>
+            </equip>            
+        </partit>
+        
+        <partit num="2">
+            <dia>21-01-2024</dia>
+
+            <equip juga="local">
+                <nom>Gryffindor</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Potter</jugador>
+                </gols>
+            </equip>
+
+            <equip juga="visitant">
+                <nom>Hufflepuff</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Smith</jugador>
+                </gols>
+            </equip>
+        </partit>
+        
+    </jornada>
+    
+    <jornada num="6">
+  
+        <partit num="1">
+            <dia>27-01-2024</dia>
+
+            <equip juga="local">
+                <nom>Gryffindor</nom>
+                <resultat>3</resultat>
+                <gols>
+                    <jugador>Potter</jugador>
+                    <jugador>Wood</jugador>
+                    <jugador>Potter</jugador>
+                </gols>
+            </equip>
+
+            <equip juga="visitant">
+                <nom>Slytherin</nom>
+                <resultat>1</resultat>
+                <gols>
+                    <jugador>Derrick</jugador>
+                </gols>
+            </equip>
+        </partit>
+        
+        <partit num="2">
+            <dia>27-01-2024</dia>
+
+            <equip juga="local">
+                <nom>Hufflepuff</nom>
+                <resultat>0</resultat>
+                <gols/>                
+            </equip>
+
+            <equip juga="visitant">
+                <nom>Ravenclaw</nom>
+                <resultat>2</resultat>
+                <gols>
+                    <jugador>Chang</jugador>
+                    <jugador>Page</jugador>
+                </gols>
+            </equip>
+        </partit>
+        
+    </jornada>
+
+</futbol>

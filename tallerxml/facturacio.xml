@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facturacio>
+    <empresa>
+        <raosocial tipus="empresa">
+            <nom>Centros Comerciales Carrefour S.A.</nom>
+            <adreca>Avenida de la Transición 36</adreca>
+            <codipostal>17760</codipostal>
+            <poblacio>Alcobendas</poblacio>
+            <CIF>A28425270</CIF>
+        </raosocial>
+    </empresa>
+    
+    <factura numero="12">
+        <client>
+            <raosocial tipus="persona" >
+                <nom>Harry</nom>
+                <cognom>Potter</cognom>
+                <cognom>Evans</cognom>
+                <adreca>Privet Drive 4</adreca>
+                <codipostal>17600</codipostal>
+                <poblacio>Londres</poblacio>
+                <DNI>40444444-M</DNI>
+            </raosocial>
+        </client>
+        <linies>
+            <producte codi="11113">
+                <descripcio>Bombons Ferrero Rocher</descripcio>
+                <quantitat>1</quantitat>
+                <preuunitari>5.89</preuunitari>
+            </producte>
+            <producte codi="11112">
+                 <descripcio>Aigua Fontvella 6.25L</descripcio>
+                 <quantitat>4</quantitat>
+                 <preuunitari>2.39</preuunitari>
+            </producte>
+            <producte codi="11111">
+                <descripcio>Huevos frescos Carrefour 24 unidades</descripcio>
+                <quantitat>2</quantitat>
+                <preuunitari>3.89</preuunitari>
+            </producte>
+        </linies>
+        <data>15-10-2023</data>
+        <subtotal>22.05</subtotal>
+        <iva>5</iva>
+        <total>23.23</total>        
+    </factura>
+    
+    <factura numero="13">
+        <client>
+            <raosocial tipus="empresa">
+                <nom>Hogwards SA</nom>
+                <adreca>c/Del Pacífic, 28</adreca>
+                <codipostal>28013</codipostal>
+                <poblacio>Hogwards</poblacio>
+                <NIF>A88888888</NIF> 
+                <domiciliat/>               
+            </raosocial>                     
+        </client>
+        <linies>
+            <producte codi="11115">
+                <descripcio>Aspiradora Dyson v8</descripcio>
+                <quantitat>1</quantitat>
+                <preuunitari>279</preuunitari>
+            </producte>                    
+            <producte codi="11116">
+                <descripcio>Portátil Asus ZenBook Ryzen 7</descripcio>
+                <quantitat>4</quantitat>
+                <preuunitari>899</preuunitari>
+            </producte>                
+            <producte codi="11117">
+                <descripcio>Colchón Visco PIKOLIN Cayena 90x190cm</descripcio>
+                <quantitat>2</quantitat>
+                <preuunitari>269</preuunitari>
+            </producte>                
+            <producte codi="11113">
+                <descripcio>Bombons Ferrero Rocher</descripcio>
+                <quantitat>100</quantitat>
+                <preuunitari>5.89</preuunitari>
+            </producte>                
+        </linies>
+        <data>15-10-2023</data>
+        <subtotal>3800</subtotal>
+        <iva>21</iva>
+        <total>5002</total> 
+        <rebuts>
+            <rebut numero="1">
+                <data>15-10-2023</data>
+                <totalrebut>2500</totalrebut>
+            </rebut>
+            <rebut numero="2">
+                <data>15-11-2023</data>
+                <totalrebut>2502</totalrebut>
+            </rebut>       
+        </rebuts>
+    </factura>    
+</facturacio>

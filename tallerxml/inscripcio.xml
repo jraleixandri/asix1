@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE inscripcio SYSTEM "inscripcio.dtd">
+<inscripcio>
+  <equip>Gryffindor</equip>
+  <jugadors>
+    <jugador>
+      <nom>Harry Potter</nom>
+      <any>2013</any>
+      <rols>
+        <rol>davanter</rol>
+        <rol>migcapmista</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Ronald Weasley</nom>
+      <any>2013</any>
+      <rols>
+        <rol>defensa</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Draco Malfoy</nom>
+      <any>2013</any>
+      <rols>
+        <rol>porter</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Hermione Granger</nom>
+      <any>2012</any>
+      <rols>
+        <rol>defensa</rol>
+        <rol>migcampista</rol>
+        <rol>davanter</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Cedric Diggory</nom>
+      <any>2012</any>
+      <rols>
+        <rol>defensa</rol>
+        <rol>migcampista</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Cho Chang</nom>
+      <any>2013</any>
+      <rols>
+        <rol>defensa</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Albus Dumbledore</nom>
+      <any>1900</any>
+      <rols>
+        <rol>davanter</rol>
+      </rols>
+    </jugador>
+    <jugador>
+      <nom>Luna Lovegood</nom>
+      <any>2013</any>
+      <rols>
+        <rol>defensa</rol>
+        <rol>migcampista</rol>
+      </rols>
+    </jugador>
+  </jugadors>
+</inscripcio>

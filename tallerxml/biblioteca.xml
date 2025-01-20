@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <editorial>
+        <raosocial>Ediciones B</raosocial>
+        <adreca>
+            <carrer>Travessera de Gràcia</carrer>
+            <numero>47-49</numero>
+            <codipostal>08021</codipostal>
+            <poblacio>Barcelona</poblacio>
+        </adreca>
+        <llibre>
+            <titol>Harry Potter y el prisionero de Azkaban</titol>
+            <publicacio>27 de març de 2000</publicacio>
+            <autor>
+                <nom>J.K.</nom>  
+                <cognom>Rowling</cognom>
+                <adreca>
+                    <carrer>Trafalgar</carrer>
+                    <numero>15</numero>
+                    <codipostal>24760</codipostal>
+                    <poblacio>Londres</poblacio>
+                </adreca>              
+            </autor>
+            <premis>
+                <premi>Premi Locus a la Millor Novel·la de Fantasia</premi>
+            </premis>
+            <argument>
+               Sirius Black,  asesino y seguidor de lord Voldemort, se ha fugado, y dicen que va en  busca de Harry. Los dementores que patrullan  por los jardines del colegio en su busqueda y capaces de sorberte el alma.
+            </argument>
+        </llibre>
+    </editorial>
+    <editorial>
+        <raosocial>Editorial Planeta</raosocial>
+        <adreca>
+                <carrer>Juan Ignacio Luca de Tena</carrer>
+                <numero>17</numero>
+                <codipostal>28027</codipostal>
+                <poblacio>Madrid</poblacio>
+        </adreca>
+        <telefon>934928000</telefon>
+        <contacte>lopd@planeta.es</contacte>
+        
+        <llibre>           
+            <titol>La Torre de Wayreth</titol>
+            <publicacio>27 de novembre de 2012</publicacio>
+            <autor>
+                <nom>Margaret</nom>  
+                <cognom>Edith</cognom>
+                <cognom>Weis</cognom>
+                <adreca>
+                    <carrer>Independence</carrer>
+                    <numero>5</numero>
+                    <codipostal>17761</codipostal>
+                    <poblacio>Missouri</poblacio>
+                </adreca>              
+            </autor>
+            <premis>
+                <premi>XIV Premio Internacional Minotauro de Ciencia Ficción y Literatura Fantástica</premi>
+                <premi>II Premio Oz de Novela</premi>
+            </premis>
+            <argument>
+                Mientras Tanis y Flint buscan refugio en el reino enano de Thorbardin, Raistlin se siente extrañamente atraído por la fortaleza encantada conocida como Monte de la Calavera
+            </argument>
+        </llibre>
+        <llibre>
+            <titol>Las puertas de Thorbardim</titol>
+            <publicacio>25 de setembre de 2012</publicacio>
+            <autor>
+                <nom>Dan Edward</nom>  
+                <cognom>Parkinson</cognom>
+                <adreca>
+                    <carrer>Dorothy</carrer>
+                    <numero>23</numero>
+                    <pis>23 A</pis>
+                    <codipostal>17760</codipostal>
+                    <poblacio>Kansas</poblacio>
+                </adreca>              
+            </autor>
+            <premis>
+                <premi>XI Premio Tristana de Novela Fantástica </premi>
+            </premis>
+            <argument>
+                Según la leyenda, a gran profundidad debajo de la fortaleza del Monte de la Calavera se hallan los restos del diabólico hechicero Fistandantilus y el camino que conduce a las puertas de Thorbardin, reino de los enanos.
+            </argument>
+        </llibre>
+    </editorial>
+</biblioteca>

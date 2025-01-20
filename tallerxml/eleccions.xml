@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eleccions> 
+    <descripcio>elecció delegat de classe</descripcio>
+    <dades>
+        <data>2023-11-29</data>
+        <alumnes>40</alumnes>
+        <abstencio>10</abstencio>
+        <blancs>2</blancs>
+    </dades>
+    <resultats>
+        <candidat>
+            <nom>Percy Weasley</nom>
+            <vots>5</vots>
+        </candidat>
+        <candidat>
+            <nom>Hannah Abbott</nom>
+            <vots>5</vots>
+        </candidat>
+        <candidat>
+            <nom>Chester Davis</nom>
+            <vots>10</vots>
+        </candidat>
+        <candidat>
+            <nom>Penélope Clearwater</nom>
+            <vots>3</vots>
+        </candidat>
+        <candidat>
+            <nom>Cedric Diggory</nom>
+            <vots>5</vots>
+        </candidat>        
+    </resultats>    
+</eleccions>
