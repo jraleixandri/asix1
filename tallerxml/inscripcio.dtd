@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT inscripcio (equip,jugadors)>
+<!ELEMENT equip (#PCDATA)>
+<!ELEMENT jugadors (jugador+)>
+<!ELEMENT jugador (nom,any,rols)>
+<!ELEMENT rols (rol+)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT any (#PCDATA)>
+<!ELEMENT rol (#PCDATA)>
