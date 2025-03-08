@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Superherois</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <header>
+	<h1> hola</h1>
+      </header>
+
+      <section>
+
+      </section>
+      <script >
+	const header = document.querySelector("header");
+	const section = document.querySelector("section");
+  fetch('superherois.json')
+      .then(response => response.json())
+      .then(data => {
+        const datosJson = document.getElementById('datos-json');
+        data.forEach(item => {
+          const div = document.createElement('div');
+          for (const key in item) {
+            const p = document.createElement('p');
+            p.textContent = `${key}: ${item[key]}`;
+            div.appendChild(p);
+          }
+          datosJson.appendChild(div);
+        });
+      })
+      .catch(error => console.error('Error al leer el JSON:', error));
+/*        async function carregar(){
+	  const resposta= await fetch('superherois.json');
+	  const superHerois =await resposta.json();
+	  populateHeader(superHerois);
+	  showHerois(superHerois);
+        }
+	carregar()
+*/
+/*	const myJSON = { name: "Chris", age: "38" };
+	myJSON;
+	const myString = JSON.stringify(myJSON);
+	myString;
+*/
+/*	const requestURL =  "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+
+	const request = new XMLHttpRequest();
+	request.open("GET", requestURL);
+	request.responseType = "json";
+	request.send();
+*/	
+	function populateHeader(jsonObj) {
+	  const myH1 = document.createElement("h1");
+	  myH1.textContent = jsonObj["squadName"];
+	  header.appendChild(myH1);
+
+	  const myPara = document.createElement("p");
+	  myPara.textContent =
+	    "Hometown: " + jsonObj["homeTown"] + " // Formed: " + jsonObj["formed"];
+	  header.appendChild(myPara);
+	}
+
+	function showHerois(jsonObj) {
+	  const heroes = jsonObj["members"];
+
+	  for (var i = 0; i < heroes.length; i++) {
+	    const myArticle = document.createElement("article");
+	    const myH2 = document.createElement("h2");
+	    const myPara1 = document.createElement("p");
+	    const myPara2 = document.createElement("p");
+	    const myPara3 = document.createElement("p");
+	    const myList = document.createElement("ul");
+
+	    myH2.textContent = heroes[i].name;
+	    myPara1.textContent = "Secret identity: " + heroes[i].secretIdentity;
+	    myPara2.textContent = "Age: " + heroes[i].age;
+	    myPara3.textContent = "Superpowers:";
+
+	    const superPowers = heroes[i].powers;
+	    for (var j = 0; j < superPowers.length; j++) {
+	      const listItem = document.createElement("li");
+	      listItem.textContent = superPowers[j];
+	      myList.appendChild(listItem);
+	    }
+
+	    myArticle.appendChild(myH2);
+	    myArticle.appendChild(myPara1);
+	    myArticle.appendChild(myPara2);
+	    myArticle.appendChild(myPara3);
+	    myArticle.appendChild(myList);
+
+	    section.appendChild(myArticle);
+	  }
+	}
+
+/*	request.onload = function () {
+	  const superHerois = request.response;
+	  populateHeader(superHerois);
+	  showHerois(superHerois);
+	};
+*/
+
+/*request.open("GET", requestURL);
+request.responseType = "text"; // recibimos una cadena de tipo "string"
+request.send();
+
+request.onload = function () {
+  const superHeroesText = request.response; // cogemos la cadena de response
+  const superHeroes = JSON.parse(superHeroesText); // la convertimos a objeto
+  populateHeader(superHeroes);
+  showHeroes(superHeroes);
+};*/
+      </script>
+  </body>
+</html>
