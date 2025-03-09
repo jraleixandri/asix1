@@ -3,41 +3,75 @@
   <head>
     <meta charset="utf-8">
     <title>Superherois</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: darkblue; }
+        .hero { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .hero h2 { margin: 0; color: darkred; }
+    </style>
   </head>
   <body>
-      <header>
-	<h1> hola</h1>
-      </header>
-
-      <section>
-
-      </section>
+    <h1>Lista de Superhéroes</h1>
+    <div id="output">Cargando...</div>
       <script >
 	const header = document.querySelector("header");
 	const section = document.querySelector("section");
-  fetch('superherois.json')
-      .then(response => response.json())
-      .then(data => {
-        const datosJson = document.getElementById('datos-json');
-        data.forEach(item => {
-          const div = document.createElement('div');
-          for (const key in item) {
-            const p = document.createElement('p');
-            p.textContent = `${key}: ${item[key]}`;
-            div.appendChild(p);
-          }
-          datosJson.appendChild(div);
-        });
-      })
-      .catch(error => console.error('Error al leer el JSON:', error));
-/*        async function carregar(){
-	  const resposta= await fetch('superherois.json');
-	  const superHerois =await resposta.json();
-	  populateHeader(superHerois);
-	  showHerois(superHerois);
+        // Cargar y mostrar el JSON
+        fetch("superherois.json")
+            .then(response => response.json())
+            .then(data => {
+                const output = document.getElementById("output");
+                output.innerHTML = renderObject(data);
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML = "Error al cargar los datos.";
+                console.error("Error cargando JSON:", error);
+            });
+
+        function renderObject(obj) {
+            let html = "";
+            for (let key in obj) {
+                if (Array.isArray(obj[key])) {
+                    html += `<div><strong>${key}:</strong><ul>`;
+                    obj[key].forEach(item => {
+                        if (typeof item === "object") {
+                            html += `<li class="item">${renderObject(item)}</li>`;
+                        } else {
+                            html += `<li>${item}</li>`;
+                        }
+                    });
+                    html += "</ul></div>";
+                } else if (typeof obj[key] === "object") {
+                    html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
+                } else {
+                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                }
+            }
+            return html;
         }
-	carregar()
+/*        fetch("superherois.json")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("output").innerHTML = `
+                    <h2>${data.squadName}</h2>
+                    <p><strong>Ciudad:</strong> ${data.homeTown}</p>
+                    <p><strong>Año de formación:</strong> ${data.formed}</p>
+                    <p><strong>Base secreta:</strong> ${data.secretBase}</p>
+                    <h3>Miembros:</h3>
+                    ${data.members.map(hero => `
+                        <div class="hero">
+                            <h2>${hero.name}</h2>
+                            <p><strong>Identidad secreta:</strong> ${hero.secretIdentity}</p>
+                            <p><strong>Edad:</strong> ${hero.age}</p>
+                            <p><strong>Poderes:</strong> ${hero.powers.join(", ")}</p>
+                        </div>
+                    `).join("")}
+                `;
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML = "Error al cargar los datos.";
+                console.error("Error cargando JSON:", error);
+            });
 */
 /*	const myJSON = { name: "Chris", age: "38" };
 	myJSON;
