@@ -24,8 +24,8 @@
                 output.innerHTML = renderObject(data);
             })
             .catch(error => {
-                document.getElementById("output").innerHTML = "Error al cargar los datos.";
-                console.error("Error cargando JSON:", error);
+                document.getElementById("output").innerHTML = "Error al carregar les dades.";
+                console.error("Error carregant JSON:", error);
             });
 
         function renderObject(obj) {
@@ -55,23 +55,23 @@
             .then(data => {
                 document.getElementById("output").innerHTML = `
                     <h2>${data.squadName}</h2>
-                    <p><strong>Ciudad:</strong> ${data.homeTown}</p>
-                    <p><strong>Año de formación:</strong> ${data.formed}</p>
+                    <p><strong>Ciutat:</strong> ${data.homeTown}</p>
+                    <p><strong>Any de formació:</strong> ${data.formed}</p>
                     <p><strong>Base secreta:</strong> ${data.secretBase}</p>
-                    <h3>Miembros:</h3>
+                    <h3>Membres:</h3>
                     ${data.members.map(hero => `
                         <div class="hero">
                             <h2>${hero.name}</h2>
-                            <p><strong>Identidad secreta:</strong> ${hero.secretIdentity}</p>
-                            <p><strong>Edad:</strong> ${hero.age}</p>
-                            <p><strong>Poderes:</strong> ${hero.powers.join(", ")}</p>
+                            <p><strong>Identitat secreta:</strong> ${hero.secretIdentity}</p>
+                            <p><strong>Edat:</strong> ${hero.age}</p>
+                            <p><strong>Poders:</strong> ${hero.powers.join(", ")}</p>
                         </div>
                     `).join("")}
                 `;
             })
             .catch(error => {
-                document.getElementById("output").innerHTML = "Error al cargar los datos.";
-                console.error("Error cargando JSON:", error);
+                document.getElementById("output").innerHTML = "Error al carregar les dades.";
+                console.error("Error carregant JSON:", error);
             });
 
 /*	const myJSON = { name: "Chris", age: "38" };
