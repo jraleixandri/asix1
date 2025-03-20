@@ -41,6 +41,8 @@
                     if (key == "variables") {                 
                       html += `<div>dia ${dia}: ${renderObject(obj[key])} </div>`;
                       dia++;
+                    }else{
+                      html += `${renderObject(obj[key])}`;
                     }
                 } else {
                     if (key == "estatDelCel" || key == "precipitacions" || key == "visibilitat" || key == "temperatures" || key == "vent") {
