@@ -34,7 +34,8 @@
               if (Array.isArray(obj[key])) {
                   obj[key].forEach(item => {
                       if (typeof item === "object") {
-                          renderObject(item);
+                        html += `<div><strong>${key}:</strong></div>`;
+                        renderObject(item);
                       }
                   });
               } else if (typeof obj[key] === "object") {
@@ -50,7 +51,6 @@
                   renderObject(obj[key]);
                   html += "</div>";
                 }else{*/
-                  html += `<div><strong>${key}:</strong></div>`;
                   renderObject(obj[key]);
 /*                }*/
               } else {
