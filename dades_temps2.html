@@ -7,7 +7,7 @@
         body { font-family: Arial, sans-serif; margin: 20px; }
         h1 { color: darkblue; }
         .item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
-        .item h2 { margin: 0; color: darkred; }
+        h2 { margin: 0; color: darkred; }
     </style>
   </head>
   <body>
@@ -22,9 +22,9 @@
                   output.innerHTML = ""; // Esborra el missatge "Carregant..."
                   
                   if (data.variables) {
-                      const pre = document.createElement("pre");
-                      pre.textContent = JSON.stringify(data.variables, null, 2);
-                      output.appendChild(pre);
+                      const h2 = document.createElement("h2");
+                      h2.textContent = JSON.stringify(data.variables, null, 2);
+                      output.appendChild(h2);
                   } else {
                       output.textContent = "No s'ha trobat el camp 'variables'";
                   }
