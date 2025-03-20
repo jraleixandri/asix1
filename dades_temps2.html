@@ -35,13 +35,13 @@
                     obj[key].forEach(item => {
                         if (typeof item === "object") {
                             html += `<li class="item">${renderObject(item)}</li>`;
-                        } else {
+                        } /*else {
                            if(key == "vent"){
                             html += `<li>Molt de vent</li>`;
                            }else{
                             html += `<li>${item}</li>`;
                            }
-                        }
+                        }*/
                     });
                     html += "</ul></div>";
                 } else if (typeof obj[key] === "object") {
