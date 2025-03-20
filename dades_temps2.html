@@ -36,7 +36,11 @@
                         if (typeof item === "object") {
                             html += `<li class="item">${renderObject(item)}</li>`;
                         } else {
+                           if(key == "vent"){
+                            html += `<li>Molt de vent</li>`;
+                           }else{
                             html += `<li>${item}</li>`;
+                           }
                         }
                     });
                     html += "</ul></div>";
