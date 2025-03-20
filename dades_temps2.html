@@ -31,18 +31,17 @@
             let html = "";
             for (let key in obj) {
                 if (Array.isArray(obj[key])) {
-                    html += `<div><strong>${key}:</strong>`;
+                    html += `<div><strong>${key}:</strong><ul>`;
                     obj[key].forEach(item => {
                         if (typeof item === "object") {
-                            renderObject(item);
+                            html += `<li class="item">${renderObject(item)}</li>`;
                         } else {
-                            html += `<h2>${item}</h2>`;
+                            html += `<li>${item}</li>`;
                         }
                     });
-                    html += "</div>";
+                    html += "</ul></div>";
                 } else if (typeof obj[key] === "object") {
-//                    html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
-                    renderObject(obj[key]);
+                    html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
                 } else {
                     html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
                 }
