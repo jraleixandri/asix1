@@ -34,12 +34,12 @@
                     html += `<div>dia:`;
                     obj[key].forEach(item => {
                         if (typeof item === "object") {
-                            renderObject(item);
+                            html += `${renderObject(item)}`;
                         }
                     });
                     html += "</div>";
                 } else if (typeof obj[key] === "object") {
-                    renderObject(obj[key]);
+                    html += `${renderObject(obj[key])}`;
                 } else {
                     if (key == "estatDelCel" || key == "precipitacions" || key == "visibilitat" || key == "temperatures" || key == "vent") {
                       html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
