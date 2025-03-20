@@ -31,17 +31,15 @@
             let html = "";
             for (let key in obj) {
                 if (Array.isArray(obj[key])) {
-                    html += `<div><strong>${key}:</strong><ul>`;
+                    html += `<div>dia:`;
                     obj[key].forEach(item => {
                         if (typeof item === "object") {
-                            html += `<li class="item">${renderObject(item)}</li>`;
-                        }else {
-                            html += `<li>${item}</li>`;
+                            renderObject(item);
                         }
                     });
-                    html += "</ul></div>";
+                    html += "</div>";
                 } else if (typeof obj[key] === "object") {
-                    html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
+                    renderObject(obj[key]);
                 } else {
                     if (key == "estatDelCel" || key == "precipitacions" || key == "visibilitat" || key == "temperatures" || key == "vent") {
                       html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
