@@ -13,25 +13,27 @@
   <body>
     <h1>Dades Previsió Metereològica</h1>
     <div id="output">Carregant...</div>
-      <script >
-        fetch("dadesobertes_pg.json")
-            .then(response => response.json())
-            .then(data => {
-                const output = document.getElementById("output");
-                output.innerHTML = renderObject(data);
-            })
-            .catch(error => {
-                document.getElementById("output").innerHTML = "Error al carregar les dades.";
-                console.error("Error carregant JSON:", error);
-            });
-           
-            jsonData.variables.forEach(variable => {
-                const div = document.createElement("div");
-                div.className = "item";
-                div.innerHTML = `<h2>${variable.nom}</h2><p>Valor: ${variable.valor}</p>`;
-                output.appendChild(div);
-            });
-        });
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          fetch("dades.json")
+              .then(response => response.json())
+              .then(data => {
+                  const output = document.getElementById("output");
+                  output.innerHTML = ""; // Esborra el missatge "Carregant..."
+                  
+                  if (data.variables) {
+                      const pre = document.createElement("pre");
+                      pre.textContent = JSON.stringify(data.variables, null, 2);
+                      output.appendChild(pre);
+                  } else {
+                      output.textContent = "No s'ha trobat el camp 'variables'";
+                  }
+              })
+              .catch(error => {
+                  document.getElementById("output").textContent = "Error carregant les dades.";
+                  console.error("Error carregant dades.json:", error);
+              });
+      });
       </script>
   </body>
 </html>
