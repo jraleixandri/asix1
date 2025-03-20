@@ -29,7 +29,6 @@
       })
         function renderObject(obj) {
             let html = "";
-            let dia = 1;
             for (let key in obj) {
                 if (Array.isArray(obj[key])) {
                     obj[key].forEach(item => {
@@ -39,8 +38,7 @@
                     });
                 } else if (typeof obj[key] === "object") {
                     if (key == "variables") {                 
-                      html += `<div>dia ${dia}: ${renderObject(obj[key])} </div>`;
-                      dia++;
+                      html += `<div>dia: ${renderObject(obj[key])} </div>`;
                     }else{
                       html += `${renderObject(obj[key])}`;
                     }
@@ -52,58 +50,6 @@
             }
             return html;
         }
-/*      function renderObject(obj) {
-          let dia = 1;
-          let html = "";
-          for (let key in obj) {
-              if (Array.isArray(obj[key])) {
-                  obj[key].forEach(item => {
-                      if (typeof item === "object") {
-                        html += `<div><strong>${item}:</strong></div>`;
-                        renderObject(item);
-                      }
-                  });
-              } else if (typeof obj[key] === "object") {
-                if (key === "variables") {
-                  if (dia == 1){
-                    html += `<div><h2><strong>Avui:</strong></h2>`;
-                  }else if(dia == 2){
-                    html += `<div><h2><strong>Demà:</strong></h2>`;
-                  }else{
-                    html += `<div><h2><strong>Passat:</strong></h2>`;
-                  }
-                  dia++;
-                  renderObject(obj[key]);
-                  html += "</div>";
-                }else{
-                  renderObject(obj[key]);
-                }
-              } else {
-                 if (key === "estatDelCel" || key === "precipitacions" || key === "visibilitat" || key === "temperatures" || key === "vent") {
-                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
-                 }else{
-                   html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
-                 }
-              }
-          }
-          html += `<div><strong>Carregat</strong></div>`;
-          return html;
-      }
-*/
-/*                  
-                  if (data.diapredit.versio.variables) {
-                      const h2 = document.createElement("h2");
-                      h2.textContent = JSON.stringify(data.diapredit.versio.variables, null, 2);
-                      output.appendChild(h2);
-                  } else {
-                      output.textContent = "No s'ha trobat el camp 'variables'";
-                  }
-              })
-              .catch(error => {
-                  document.getElementById("output").textContent = "Error carregant les dades.";
-                  console.error("Error carregant dades.json:", error);
-              });
-      });*/
       </script>
   </body>
 </html>
