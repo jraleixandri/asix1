@@ -42,6 +42,12 @@
                       }
                   });
                   html += "</div>";
+                }else{
+                  obj[key].forEach(item => {
+                      if (typeof item === "object") {
+                          renderObject(item);
+                      }
+                  });                
                 }
               } else if (typeof obj[key] === "object") {
                   html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
