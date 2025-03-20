@@ -32,6 +32,19 @@
           let html = "";
           for (let key in obj) {
               if (Array.isArray(obj[key])) {
+                  obj[key].forEach(item => {
+                      if (typeof item === "object") {
+                          renderObject(item);
+                      }
+                  });
+                }else{
+                  obj[key].forEach(item => {
+                      if (typeof item === "object") {
+                          renderObject(item);
+                      }
+                  });                
+                }
+              } else if (typeof obj[key] === "object") {
                 if (key === "variables") {
                   if (dia == 1){
                     html += `<div><h2><strong>Avui:</strong></h2>`;
@@ -41,23 +54,8 @@
                     html += `<div><h2><strong>Passat:</strong></h2>`;
                   }
                   dia++;
-                  obj[key].forEach(item => {
-                      if (typeof item === "object") {
-                          html += `<h3>${renderObject(item)}</h3>`;
-                      } else {
-                          html += `<h3>${item}</h3>`;
-                      }
-                  });
+                  renderObject(obj[key]);
                   html += "</div>";
-                }else{
-                  obj[key].forEach(item => {
-                      if (typeof item === "object") {
-                          renderObject(item);
-                      }
-                  });                
-                }
-              } else if (typeof obj[key] === "object") {
-                  html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
               } else {
                   html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
               }
