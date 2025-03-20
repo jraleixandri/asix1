@@ -27,7 +27,29 @@
                 console.error("Error carregant JSON:", error);
             });
       })
-      function renderObject(obj) {
+        function renderObject(obj) {
+            let html = "";
+            for (let key in obj) {
+                if (Array.isArray(obj[key])) {
+                    html += `<div><strong>${key}:</strong>`;
+                    obj[key].forEach(item => {
+                        if (typeof item === "object") {
+                            renderObject(item);
+                        } else {
+                            html += `<h2>${item}</h2>`;
+                        }
+                    });
+                    html += "</div>";
+                } else if (typeof obj[key] === "object") {
+//                    html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
+                    renderObject(obj[key]);
+                } else {
+                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                }
+            }
+            return html;
+        }
+/*      function renderObject(obj) {
           let dia = 1;
           let html = "";
           for (let key in obj) {
@@ -39,7 +61,7 @@
                       }
                   });
               } else if (typeof obj[key] === "object") {
-/*                if (key === "variables") {
+                if (key === "variables") {
                   if (dia == 1){
                     html += `<div><h2><strong>Avui:</strong></h2>`;
                   }else if(dia == 2){
@@ -50,20 +72,21 @@
                   dia++;
                   renderObject(obj[key]);
                   html += "</div>";
-                }else{*/
+                }else{
                   renderObject(obj[key]);
-/*                }*/
+                }
               } else {
-/*                 if (key === "estatDelCel" || key === "precipitacions" || key === "visibilitat" || key === "temperatures" || key === "vent") {
+                 if (key === "estatDelCel" || key === "precipitacions" || key === "visibilitat" || key === "temperatures" || key === "vent") {
                     html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
-                 }else{*/
+                 }else{
                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
-/*                 }*/
+                 }
               }
           }
           html += `<div><strong>Carregat</strong></div>`;
           return html;
-      }        
+      }
+*/
 /*                  
                   if (data.diapredit.versio.variables) {
                       const h2 = document.createElement("h2");
