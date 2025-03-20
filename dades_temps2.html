@@ -16,12 +16,42 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
           fetch("dadesobertes_pg.json")
-              .then(response => response.json())
-              .then(data => {
-                  const output = document.getElementById("output");
-                  output.innerHTML = ""; // Esborra el missatge "Carregant..."
+            .then(response => response.json())
+            .then(data => {
+                const output = document.getElementById("output");
+                output.innerHTML = renderObject(data);
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML = "Error al carregar les dades.";
+                console.error("Error carregant JSON:", error);
+            });
+      }
+      function renderObject(obj) {
+          let dia = 1;
+          let html = "";
+          for (let key in obj) {
+              if (Array.isArray(obj[key])) {
+                if(${key}=="variables"){
+                  html += `<div><h2><strong>Avui:</strong></h2>`;
+                  obj[key].forEach(item => {
+                      if (typeof item === "object") {
+                          html += `<h3>${renderObject(item)}</h3>`;
+                      } else {
+                          html += `<h3>${item}</h3>`;
+                      }
+                  });
+                  html += "</div>";
+                }
+              } else if (typeof obj[key] === "object") {
+                  html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
+              } else {
+                  html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+              }
+          }
+          return html;
+        }        
                   
-                  if data.diapredit.versio.variables) {
+                  if (data.diapredit.versio.variables) {
                       const h2 = document.createElement("h2");
                       h2.textContent = JSON.stringify(data.diapredit.versio.variables, null, 2);
                       output.appendChild(h2);
