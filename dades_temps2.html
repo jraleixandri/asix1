@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="ES">
   <head>
     <meta charset="utf-8">
@@ -49,6 +49,8 @@
                   dia++;
                   renderObject(obj[key]);
                   html += "</div>";
+                }else{
+                  renderObject(obj[key]);
                 }
               } else {
                  if (key === "estatDelCel" || key === "precipitacions" || key === "visibilitat" || key === "temperatures" || key === "vent") {
