@@ -32,8 +32,15 @@
           let html = "";
           for (let key in obj) {
               if (Array.isArray(obj[key])) {
-                if(${key}=="variables"){
-                  html += `<div><h2><strong>Avui:</strong></h2>`;
+                if (key === "variables") {
+                  if (dia == 1){
+                    html += `<div><h2><strong>Avui:</strong></h2>`;
+                  }elseif((dia == 2){
+                    html += `<div><h2><strong>Demà:</strong></h2>`;
+                  }else{
+                    html += `<div><h2><strong>Passat:</strong></h2>`;
+                  }
+                  dia++;
                   obj[key].forEach(item => {
                       if (typeof item === "object") {
                           html += `<h3>${renderObject(item)}</h3>`;
