@@ -37,13 +37,6 @@
                           renderObject(item);
                       }
                   });
-                }else{
-                  obj[key].forEach(item => {
-                      if (typeof item === "object") {
-                          renderObject(item);
-                      }
-                  });                
-                }
               } else if (typeof obj[key] === "object") {
                 if (key === "variables") {
                   if (dia == 1){
@@ -56,12 +49,15 @@
                   dia++;
                   renderObject(obj[key]);
                   html += "</div>";
+                }
               } else {
-                  html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                 if (key === "estatDelCel" || key === "precipitacions" || key === "visibilitat" || key === "temperatures" || key === "vent") {
+                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                 }
               }
           }
           return html;
-        }        
+      }        
 /*                  
                   if (data.diapredit.versio.variables) {
                       const h2 = document.createElement("h2");
