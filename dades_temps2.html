@@ -34,7 +34,7 @@
               if (Array.isArray(obj[key])) {
                   obj[key].forEach(item => {
                       if (typeof item === "object") {
-                        html += `<div><strong>${key}:</strong></div>`;
+                        html += `<div><strong>${item}:</strong></div>`;
                         renderObject(item);
                       }
                   });
