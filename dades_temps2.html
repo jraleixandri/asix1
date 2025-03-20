@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Dades Previsió Metereològica</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: darkblue; }
+        .item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .item h2 { margin: 0; color: darkred; }
+    </style>
+  </head>
+  <body>
+    <h1>Dades Previsió Metereològica</h1>
+    <div id="output">Carregant...</div>
+      <script >
+        fetch("dadesobertes_pg.json")
+            .then(response => response.json())
+            .then(data => {
+                const output = document.getElementById("output");
+                output.innerHTML = renderObject(data);
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML = "Error al carregar les dades.";
+                console.error("Error carregant JSON:", error);
+            });
+           
+            jsonData.variables.forEach(variable => {
+                const div = document.createElement("div");
+                div.className = "item";
+                div.innerHTML = `<h2>${variable.nom}</h2><p>Valor: ${variable.valor}</p>`;
+                output.appendChild(div);
+            });
+        });
+      </script>
+  </body>
+</html>
