@@ -39,7 +39,7 @@
                     });
                 } else if (typeof obj[key] === "object") {
                     if (key == "variables") {                 
-                      html += `<div>dia` + ${dia} + `: ${renderObject(obj[key])} </div>`;
+                      html += `<div>dia ${dia}: ${renderObject(obj[key])} </div>`;
                       dia++;
                     }
                 } else {
