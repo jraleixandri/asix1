@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Dades Previsió Metereològica</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; backgroud-color: yellow;}
         h1 { color: darkblue; }
         .item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
         h2 { margin: 0; color: darkred; }
@@ -38,13 +38,13 @@
                     });
                 } else if (typeof obj[key] === "object") {
                     if (key == "variables") {                 
-                      html += `<div>dia: ${renderObject(obj[key])} </div>`;
+                      html += `<div><h2>Previsió del dia:</h2> ${renderObject(obj[key])} </div>`;
                     }else{
                       html += `${renderObject(obj[key])}`;
                     }
                 } else {
                     if (key == "estatDelCel" || key == "precipitacions" || key == "visibilitat" || key == "temperatures" || key == "vent") {
-                      html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                      html += `<div><strong>${key}:</strong> <h3> ${obj[key]} </h3></div>`;
                     }
                 }
             }
