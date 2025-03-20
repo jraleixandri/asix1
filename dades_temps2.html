@@ -35,19 +35,19 @@
                     obj[key].forEach(item => {
                         if (typeof item === "object") {
                             html += `<li class="item">${renderObject(item)}</li>`;
-                        } /*else {
-                           if(key == "vent"){
-                            html += `<li>Molt de vent</li>`;
-                           }else{
+                        }else {
                             html += `<li>${item}</li>`;
-                           }
-                        }*/
+                        }
                     });
                     html += "</ul></div>";
                 } else if (typeof obj[key] === "object") {
                     html += `<div class="item"><strong>${key}:</strong>${renderObject(obj[key])}</div>`;
                 } else {
-                    html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                    if ( key == "vent"){
+                      html += `<div><strong>${key}:</strong> Molt de vent </div>`;
+                    }else{
+                      html += `<div><strong>${key}:</strong> ${obj[key]}</div>`;
+                    }
                 }
             }
             return html;
