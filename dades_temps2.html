@@ -21,9 +21,9 @@
                   const output = document.getElementById("output");
                   output.innerHTML = ""; // Esborra el missatge "Carregant..."
                   
-                  if (data.variables) {
+                  if data.diapredit.versio.variables) {
                       const h2 = document.createElement("h2");
-                      h2.textContent = JSON.stringify(data.variables, null, 2);
+                      h2.textContent = JSON.stringify(data.diapredit.versio.variables, null, 2);
                       output.appendChild(h2);
                   } else {
                       output.textContent = "No s'ha trobat el camp 'variables'";
