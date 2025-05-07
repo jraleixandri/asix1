@@ -1,52 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantes Fotovoltaiques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .verd {
+            background-color: #d4edda;
+        }
+        .groc {
+            background-color: #fff3cd;
+        }
+    </style>
 </head>
 <body>
-    <h1>Plantes amb potència ≥ 5 MW</h1>
-
-    <h2>Baix Ebre</h2>
-    <table border="1" id="taula-baix-ebre">
-        <tr>
-            <th>Nom</th>
-            <th>Potència (MW)</th>
-            <th>Municipi</th>
-        </tr>
-    </table>
-
-    <h2>Montsià</h2>
-    <table border="1" id="taula-montsia">
-        <tr>
-            <th>Nom</th>
-            <th>Potència (MW)</th>
-            <th>Municipi</th>
-        </tr>
-    </table>
+    <h1>Plantes Fotovoltaiques</h1>
+    <div id="taules-container"></div>
 
     <script>
-        fetch('dades.json')
-            .then(response => response.json())
-            .then(data => {
-                const files = data.response.rows.row;
-                const baixEbre = document.getElementById('taula-baix-ebre');
-                const montsia = document.getElementById('taula-montsia');
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('taules-container');
 
-                files.forEach(f => {
-                    const potencia = parseFloat(f.potencia_mw);
-                    if (potencia >= 0) {
-                        const row = `<tr><td>${f.nom}</td><td>${f.potencia_mw}</td><td>${f.municipi}</td></tr>`;
-                        if (f.comarca === "Baix Ebre") {
-                            baixEbre.innerHTML += row;
-                        } else if (f.comarca === "Montsià") {
-                            montsia.innerHTML += row;
-                        }
+            // Carregar el fitxer JSON
+            fetch('json.json')
+                .then(response => response.json())
+                .then(data => {
+                    const rows = data.response.rows.row;
+
+                    // Filtrar les dades per comarca
+                    const baixEbre = rows.filter(row => row.comarca === "Baix Ebre");
+                    const montsia = rows.filter(row => row.comarca === "Montsià");
+
+                    // Funció per crear una taula
+                    function crearTaula(dades, titol) {
+                        const taula = document.createElement('table');
+                        const caption = taula.createCaption();
+                        caption.textContent = titol;
+
+                        // Crear capçalera
+                        const capçalera = taula.createTHead().insertRow();
+                        Object.keys(dades[0]).forEach(clau => {
+                            const th = document.createElement('th');
+                            th.textContent = clau;
+                            capçalera.appendChild(th);
+                        });
+
+                        // Crear cos de la taula
+                        const cos = taula.createTBody();
+                        dades.forEach(fila => {
+                            const tr = cos.insertRow();
+                            Object.values(fila).forEach((valor, index) => {
+                                const td = tr.insertCell();
+                                td.textContent = valor;
+
+                                // Aplicar color segons potencia_mw
+                                if (Object.keys(fila)[index] === "potencia_mw") {
+                                    const potencia = parseFloat(valor);
+                                    if (potencia >= 5) {
+                                        tr.classList.add('verd');
+                                    } else {
+                                        tr.classList.add('groc');
+                                    }
+                                }
+                            });
+                        });
+
+                        container.appendChild(taula);
                     }
+
+                    // Crear les taules
+                    if (baixEbre.length > 0) crearTaula(baixEbre, "Plantes del Baix Ebre");
+                    if (montsia.length > 0) crearTaula(montsia, "Plantes del Montsià");
+                })
+                .catch(error => {
+                    console.error('Error carregant el JSON:', error);
                 });
-            })
-            .catch(err => console.error("Error carregant el JSON:", err));
+        });
     </script>
 </body>
 </html>
