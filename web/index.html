@@ -36,7 +36,7 @@
 
                 files.forEach(f => {
                     const potencia = parseFloat(f.potencia_mw);
-                    if (potencia >= 5) {
+                    if (potencia >= 0) {
                         const row = `<tr><td>${f.nom}</td><td>${f.potencia_mw}</td><td>${f.municipi}</td></tr>`;
                         if (f.comarca === "Baix Ebre") {
                             baixEbre.innerHTML += row;
