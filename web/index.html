@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantes Fotovoltaiques</title>
+</head>
+<body>
+    <h1>Plantes amb potència ≥ 5 MW</h1>
+
+    <h2>Baix Ebre</h2>
+    <table border="1" id="taula-baix-ebre">
+        <tr>
+            <th>Nom</th>
+            <th>Potència (MW)</th>
+            <th>Municipi</th>
+        </tr>
+    </table>
+
+    <h2>Montsià</h2>
+    <table border="1" id="taula-montsia">
+        <tr>
+            <th>Nom</th>
+            <th>Potència (MW)</th>
+            <th>Municipi</th>
+        </tr>
+    </table>
+
+    <script>
+        fetch('dades.json')
+            .then(response => response.json())
+            .then(data => {
+                const files = data.response.rows.row;
+                const baixEbre = document.getElementById('taula-baix-ebre');
+                const montsia = document.getElementById('taula-montsia');
+
+                files.forEach(f => {
+                    const potencia = parseFloat(f.potencia_mw);
+                    if (potencia >= 5) {
+                        const row = `<tr><td>${f.nom}</td><td>${f.potencia_mw}</td><td>${f.municipi}</td></tr>`;
+                        if (f.comarca === "Baix Ebre") {
+                            baixEbre.innerHTML += row;
+                        } else if (f.comarca === "Montsià") {
+                            montsia.innerHTML += row;
+                        }
+                    }
+                });
+            })
+            .catch(err => console.error("Error carregant el JSON:", err));
+    </script>
+</body>
+</html>
