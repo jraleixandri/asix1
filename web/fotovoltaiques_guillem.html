@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Plantes Fotovoltaiques</title>
+  <style>
+    table {
+      width: 50%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+    .alta-potencia {
+      background-color: lightgreen;
+    }
+    .baixa-potencia {
+      background-color: lightyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>Plantes Fotovoltaiques</h1>
+
+  <h2>Baix Ebre</h2>
+  <table id="baix-ebre-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Municipi</th>
+        <th>Potència (MW)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Montsià</h2>
+  <table id="montsia-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Municipi</th>
+        <th>Potència (MW)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    // Exemple de dades JSON simulades (substitueix per una càrrega des de fitxer si cal)
+    const dades = [
+      { comarca: "Baix Ebre", nom: "Planta A", municipi: "Tortosa", potencia_mw: 6.2 },
+      { comarca: "Baix Ebre", nom: "Planta B", municipi: "Xerta", potencia_mw: 3.1 },
+      { comarca: "Montsià", nom: "Planta C", municipi: "Amposta", potencia_mw: 5.0 },
+      { comarca: "Montsià", nom: "Planta D", municipi: "Ulldecona", potencia_mw: 2.9 }
+    ];
+
+    function afegeixFilera(taulaId, planta) {
+      const tbody = document.querySelector(`#${taulaId} tbody`);
+      const fila = document.createElement('tr');
+      fila.className = planta.potencia_mw >= 5 ? 'alta-potencia' : 'baixa-potencia';
+      fila.innerHTML = `
+        <td>${planta.nom}</td>
+        <td>${planta.municipi}</td>
+        <td>${planta.potencia_mw}</td>
+      `;
+      tbody.appendChild(fila);
+    }
+
+    dades.forEach(planta => {
+      if (planta.comarca === "Baix Ebre") {
+        afegeixFilera("baix-ebre-table", planta);
+      } else if (planta.comarca === "Montsià") {
+        afegeixFilera("montsia-table", planta);
+      }
+    });
+  </script>
+</body>
+</html>
